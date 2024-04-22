@@ -1,0 +1,42 @@
+html {
+	background-image: url("win98_wallpaper.jpg");
+	background-size: cover;
+	width: 100%;
+}
+
+.outer {
+	display: flex;
+	justify-content: center;
+}
+
+.in-line {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 32px;
+	/* color: #333399; */
+	color: white;
+	text-align: center;
+}
+
+.footer-header {
+	width: 100%;
+	height: 32px;
+	background-image: url("dino.gif");
+}
+
+.footer-content {
+	animation: blinker 1s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
