@@ -66,6 +66,7 @@
                           <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OR4L" style="color: black; padding-left: 5px;">OR4L</a></li> <!-- ON4PFD -->
                           <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0OTY" style="color: black; padding-left: 5px;">GB0OTY</a></li> <!-- M0JEO -->
                           <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0NGO" style="color: black; padding-left: 5px;">GB0NGO</a></li> <!-- M0JEO -->
+                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB4SSY" style="color: black; padding-left: 5px;">GB4SSY</a></li> <!-- ON4PFD -->
                           <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G1SUS" style="color: black; padding-left: 5px;">G1SUS</a></li> <!-- G1SUS / ON4BCY / KZ4GE -->
                           <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
                           <!--<li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OS3NPAI" style="color: black; padding-left: 5px;">OS3NPAI</a></li> -->
