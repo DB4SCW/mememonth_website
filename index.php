@@ -70,7 +70,7 @@
                           <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G4SSY" style="color: black; padding-left: 5px;">G4SSY</a></li> <!-- ON4PFD -->
                           <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G1SUS" style="color: black; padding-left: 5px;">G1SUS</a></li> <!-- G1SUS / ON4BCY / KZ4GE -->
                           <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
-                          <!--<li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OS3NPAI" style="color: black; padding-left: 5px;">OS3NPAI</a></li> -->
+                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
@@ -98,7 +98,7 @@
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li>No Calls registered in Region 3 yet. Please check back later.</li>
+                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/" style="color: black; padding-left: 5px;">Coming soon (TM)</a></li>
                         </ul>
                       </p>
                     </p>
