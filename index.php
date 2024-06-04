@@ -98,7 +98,7 @@
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/" style="color: black; padding-left: 5px;">Coming soon (TM)</a></li>
+                        <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>
                         </ul>
                       </p>
                     </p>
