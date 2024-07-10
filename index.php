@@ -72,6 +72,7 @@
                           <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G1SUS" style="color: black; padding-left: 5px;">G1SUS</a></li> <!-- G1SUS / ON4BCY / KZ4GE -->
                           <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
                           <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
+                          <li><span class="flag-icon flag-icon-ro flag-icon-squared"></span><a href="https://qrz.com/db/YR1CKROLL" style="color: black; padding-left: 5px;">YR1CKROLL</a></li> <!-- YO9LIG -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
