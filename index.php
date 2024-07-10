@@ -100,7 +100,7 @@
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                        <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>
+                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>
                         </ul>
                       </p>
                     </p>
@@ -138,7 +138,6 @@
                   <img style="width: auto; height: 200px;" src="DL0NGCAT_QSL_card.jpg">
                   <img style="width: auto; height: 200px;" src="DF4CEPALM_QSL_card.jpg">
                 </article>
-                <!--
                 <article role="tabpanel" hidden id="tab-G">
                     <h3>Meme Appreciation Month 4: The search for the Third</h3>
                     <h3 style="font-size: 20px;">Callsign Archive</h3>
@@ -146,26 +145,50 @@
                       The following callsigns were on air for Meme Appreciation Month 4: The search for the Third from 2024-06-15 until 2024-08-15: 
                       <p>IARU Region 1:
                         <ul>
-                        
-                       
+                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DF4CEPALM" style="color: black; padding-left: 5px;">DF4CEPALM</a></li> <!-- DB4SCW -->
+                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0LOL" style="color: black; padding-left: 5px;">DL0LOL</a></li> <!-- DB4SCW -->
+                          <li><span class="flag-icon flag-icon-nl flag-icon-squared"></span><a href="https://qrz.com/db/PD6SENPAI" style="color: black; padding-left: 5px;">PD6SENPAI</a></li>
+                          <li><span class="flag-icon flag-icon-at flag-icon-squared"></span><a href="https://qrz.com/db/OE51DEEYE" style="color: black; padding-left: 5px;">OE51DEEYE</a></li>
+                          <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OO0F" style="color: black; padding-left: 5px;">OO0F</a></li> <!-- ON6RF -->
+                          <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OR4L" style="color: black; padding-left: 5px;">OR4L</a></li> <!-- ON4PFD -->
+                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0OTY" style="color: black; padding-left: 5px;">GB0OTY</a></li> <!-- M0JEO -->
+                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0NGO" style="color: black; padding-left: 5px;">GB0NGO</a></li> <!-- M0JEO -->
+                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G4SSY" style="color: black; padding-left: 5px;">G4SSY</a></li> <!-- ON4PFD -->
+                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G1SUS" style="color: black; padding-left: 5px;">G1SUS</a></li> <!-- G1SUS / ON4BCY / KZ4GE -->
+                          <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
+                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
+                          <li><span class="flag-icon flag-icon-ro flag-icon-squared"></span><a href="https://qrz.com/db/YR1CKROLL" style="color: black; padding-left: 5px;">YR1CKROLL</a></li> <!-- YO9LIG -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                    
+                          li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> <!-- VB4BEN -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2THEGAME" style="color: black; padding-left: 5px;">VB2THEGAME</a></li> <!-- VE2HKW -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2KILOWAT" style="color: black; padding-left: 5px;">VB2KILOWAT</a></li> <!-- VA2XZA -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VA6INA" style="color: black; padding-left: 5px;">VA6INA</a></li> <!-- VA6ATC -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7ZALGO" style="color: black; padding-left: 5px;">VC7ZALGO</a></li> <!-- VE7QQ -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7HORSE" style="color: black; padding-left: 5px;">VC7HORSE</a></li> <!-- VE7QQ -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7F" style="color: black; padding-left: 5px;">VC7F</a></li> <!-- VE7QQ -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li> <!-- KO4ZMC -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K3K" style="color: black; padding-left: 5px;">K3K</a></li> <!-- ??? -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> <!-- WT5A --> 
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/N9E" style="color: black; padding-left: 5px;">N9E</a></li> <!-- WT5A --> 
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W4L" style="color: black; padding-left: 5px;">W4L</a></li> <!-- WT5A --> 
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1D" style="color: black; padding-left: 5px;">K1D</a></li> <!-- KO4VXD -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1L" style="color: black; padding-left: 5px;">K1L</a></li> <!-- KO4VXD -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W3B" style="color: black; padding-left: 5px;">W3B</a></li> <!-- KO4ZMC -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4ZMC -->
                         </ul>
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li>No Calls registered in Region 3 yet. Please check back later.</li>
+                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>
                         </ul>
                       </p>
                     </p>
-                    
                     <h3>Award check:</h3>
                     <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2024"><button>Awardcheck Meme Appreciation Month 3 (2024)</button></a>
                 </article>
-                    -->
                 <article role="tabpanel" hidden id="tab-H">
                     <h3>Meme Appreciation Month 2: Electric Boogaloo</h3>
                     <h3 style="font-size: 20px;">Callsign Archive</h3>
