@@ -162,7 +162,7 @@
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                          li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> <!-- VB4BEN -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> <!-- VB4BEN -->
                           <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2THEGAME" style="color: black; padding-left: 5px;">VB2THEGAME</a></li> <!-- VE2HKW -->
                           <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2KILOWAT" style="color: black; padding-left: 5px;">VB2KILOWAT</a></li> <!-- VA2XZA -->
                           <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VA6INA" style="color: black; padding-left: 5px;">VA6INA</a></li> <!-- VA6ATC -->
