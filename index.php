@@ -73,6 +73,7 @@
                           <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
                           <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
                           <li><span class="flag-icon flag-icon-ro flag-icon-squared"></span><a href="https://qrz.com/db/YR1CKROLL" style="color: black; padding-left: 5px;">YR1CKROLL</a></li> <!-- YO9LIG -->
+                          <li><span class="flag-icon flag-icon-ea flag-icon-squared"></span><a href="https://qrz.com/db/EG1TBDICS" style="color: black; padding-left: 5px;">EG1TBDICS</a></li> <!-- EA1JAY -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
@@ -158,6 +159,7 @@
                           <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
                           <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
                           <li><span class="flag-icon flag-icon-ro flag-icon-squared"></span><a href="https://qrz.com/db/YR1CKROLL" style="color: black; padding-left: 5px;">YR1CKROLL</a></li> <!-- YO9LIG -->
+                          <li><span class="flag-icon flag-icon-ea flag-icon-squared"></span><a href="https://qrz.com/db/EG1TBDICS" style="color: black; padding-left: 5px;">EG1TBDICS</a></li> <!-- EA1JAY -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
