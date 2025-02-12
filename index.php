@@ -11,7 +11,7 @@
   <body>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
-          <div class="title-bar-text">Information about Meme Appreciation Month 4: The Search for the Third</div>
+          <div class="title-bar-text">Information about Meme Appreciation Month 3: Found it!</div>
           <div class="title-bar-controls">
             <a href="https://mememonth.ca"><button aria-label="Minimize"></button></a>
             <a href="https://mememonth.ca"><button aria-label="Maximize"></button></a>
@@ -38,12 +38,13 @@
                     <p>Honestly it's a way for young hams to have some fun, use a cool callsign and do a neat activity together.</p>
                     <p>The shenanigans started 2022 with the first ever Meme Apprecation Month and iconic callsigns such as VB4LIGMA, VB3YEET, VC9CATGIRL, VC3RIKROLL, VC3DEEZ and many more. </p>
                     <p>The second event in 2023 birthed callsigns such as VC9FEMBOY, DZ2NUTS, PD33ZDOGE and DL0NGCAT.</p>
-                    <p>This is the fourth installment already. Well. Kind of. Thats the joke.</p>
+                    <p>2024 was the fourth installment already. Well. Kind of. Thats the joke.</p>
+                    <p>2025 is the third installment, since we we successfull in finding it in 2024.</p>
                     <h4>What is a meme and why does it have to be appreciated?</h4>
                     <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
                     <p>To make it short - a meme is something most young people know and find funny.</p>
                     <p>If this funny bit makes it into amateur radio and attracts the young folk - perfect, right?</p>
-                    <h4>Meme Appreciation Award 2024</h4>
+                    <h4>Meme Appreciation Award 2025</h4>
                     <p>This time, for your QSOs with all the meme callsigns, you can earn yourself some fancy awards!</p>
                     <p>You can check if you qualify and download your award on this nifty webpage:</p>
                     <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2024"><button>Check your award here</button></a>
@@ -60,48 +61,21 @@
                       The following callsigns have been registered for Meme Appreciation Month:
                         <p>IARU Region 1:
                         <ul>
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DF4CEPALM" style="color: black; padding-left: 5px;">DF4CEPALM</a></li> <!-- DB4SCW -->
+                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DC0NORRIS" style="color: black; padding-left: 5px;">DC0NORRIS</a></li> <!-- DB4SCW -->
                           <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0LOL" style="color: black; padding-left: 5px;">DL0LOL</a></li> <!-- DB4SCW -->
-                          <li><span class="flag-icon flag-icon-nl flag-icon-squared"></span><a href="https://qrz.com/db/PD6SENPAI" style="color: black; padding-left: 5px;">PD6SENPAI</a></li>
-                          <li><span class="flag-icon flag-icon-at flag-icon-squared"></span><a href="https://qrz.com/db/OE51DEEYE" style="color: black; padding-left: 5px;">OE51DEEYE</a></li>
-                          <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OO0F" style="color: black; padding-left: 5px;">OO0F</a></li> <!-- ON6RF -->
-                          <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OR4L" style="color: black; padding-left: 5px;">OR4L</a></li> <!-- ON4PFD -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0OTY" style="color: black; padding-left: 5px;">GB0OTY</a></li> <!-- M0JEO -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0NGO" style="color: black; padding-left: 5px;">GB0NGO</a></li> <!-- M0JEO -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G4SSY" style="color: black; padding-left: 5px;">G4SSY</a></li> <!-- ON4PFD -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G1SUS" style="color: black; padding-left: 5px;">G1SUS</a></li> <!-- G1SUS / ON4BCY / KZ4GE -->
-                          <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
-                          <li><span class="flag-icon flag-icon-ro flag-icon-squared"></span><a href="https://qrz.com/db/YR1CKROLL" style="color: black; padding-left: 5px;">YR1CKROLL</a></li> <!-- YO9LIG -->
-                          <li><span class="flag-icon flag-icon-es flag-icon-squared"></span><a href="https://qrz.com/db/EG1TBDICS" style="color: black; padding-left: 5px;">EG1TBDICS</a></li> <!-- EA1JAY -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> <!-- VB4BEN -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2THEGAME" style="color: black; padding-left: 5px;">VB2THEGAME</a></li> <!-- VE2HKW -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2KILOWAT" style="color: black; padding-left: 5px;">VB2KILOWAT</a></li> <!-- VA2XZA -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VA6INA" style="color: black; padding-left: 5px;">VA6INA</a></li> <!-- VA6ATC -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7ZALGO" style="color: black; padding-left: 5px;">VC7ZALGO</a></li> <!-- VE7QQ -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7HORSE" style="color: black; padding-left: 5px;">VC7HORSE</a></li> <!-- VE7QQ -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7F" style="color: black; padding-left: 5px;">VC7F</a></li> <!-- VE7QQ -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li> <!-- KO4ZMC -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K3K" style="color: black; padding-left: 5px;">K3K</a></li> <!-- ??? -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> <!-- WT5A --> 
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/N9E" style="color: black; padding-left: 5px;">N9E</a></li> <!-- WT5A --> 
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W4L" style="color: black; padding-left: 5px;">W4L</a></li> <!-- WT5A --> 
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1D" style="color: black; padding-left: 5px;">K1D</a></li> <!-- KO4VXD -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1L" style="color: black; padding-left: 5px;">K1L</a></li> <!-- KO4VXD -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W3B" style="color: black; padding-left: 5px;">W3B</a></li> <!-- KO4ZMC -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4ZMC -->
-                          <!--
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/N4B" style="color: black; padding-left: 5px;">N4B</a></li> KO4VXD
-                          -->
+                          <li>For this region, there are no participants announced yet. Check back later!</li>
+                          <!--<li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> --><!-- VB4BEN -->
+                          <!--<li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> --><!-- WT5A --> 
                         </ul>
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>
+                          <li>For this region, there are no participants announced yet. Check back later!</li>
+                          <!--<li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>-->
                         </ul>
                       </p>
                     </p>
@@ -113,7 +87,7 @@
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
-                    <p>The event will be active between June 15, 2024 and August 15, 2024.</p>
+                    <p>The event will be active between June 15, 2025 and August 15, 2025.</p>
                     <p>Between the group of operators behind this event, we will keep the meme calls on air for most of the event, surely with enough dial spinning you too can add a meme call to your logbook.</p>
                 </article>
                 <article role="tabpanel" hidden id="tab-D">
@@ -189,7 +163,7 @@
                       </p>
                     </p>
                     <h3>Award check:</h3>
-                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2024"><button>Awardcheck Meme Appreciation Month 3 (2024)</button></a>
+                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2024"><button>Awardcheck Meme Appreciation Month 4 (2024)</button></a>
                 </article>
                 <article role="tabpanel" hidden id="tab-H">
                     <h3>Meme Appreciation Month 2: Electric Boogaloo</h3>
