@@ -47,7 +47,7 @@
                     <h4>Meme Appreciation Award 2025</h4>
                     <p>This time, for your QSOs with all the meme callsigns, you can earn yourself some fancy awards!</p>
                     <p>You can check if you qualify and download your award on this nifty webpage:</p>
-                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2024"><button>Check your award here</button></a>
+                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2025"><button>Check your award here</button></a>
                     <p></p>
                     <hr>
                     <h4>This info in foreign languages:</h4>
