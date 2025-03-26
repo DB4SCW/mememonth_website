@@ -68,7 +68,6 @@
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                          <li>For this region, there are no participants announced yet. Check back later!</li>
                           <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4FX -->
                           <!--<li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> --><!-- WT5A --> 
                         </ul>
