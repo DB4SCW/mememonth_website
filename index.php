@@ -63,12 +63,13 @@
                         <ul>
                           <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DC0NORRIS" style="color: black; padding-left: 5px;">DC0NORRIS</a></li> <!-- DB4SCW -->
                           <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0LOL" style="color: black; padding-left: 5px;">DL0LOL</a></li> <!-- DB4SCW -->
+                          <li><span class="flag-icon flag-icon-at flag-icon-squared"></span><a href="https://qrz.com/db/OE01MIKU" style="color: black; padding-left: 5px;">OE01MIKU</a></li> <!-- OE3OGC -->
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
                           <li>For this region, there are no participants announced yet. Check back later!</li>
-                          <!--<li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> --><!-- VB4BEN -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4FX -->
                           <!--<li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> --><!-- WT5A --> 
                         </ul>
                       </p>
