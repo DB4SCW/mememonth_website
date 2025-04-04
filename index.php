@@ -13,8 +13,8 @@
         <div class="title-bar">
           <div class="title-bar-text">Information about Meme Appreciation Month 3: Found it!</div>
           <div class="title-bar-controls">
-            <a href="https://mememonth.ca"><button aria-label="Minimize"></button></a>
-            <a href="https://mememonth.ca"><button aria-label="Maximize"></button></a>
+            <a href="https://mememonth.org"><button aria-label="Minimize"></button></a>
+            <a href="https://mememonth.org"><button aria-label="Maximize"></button></a>
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button aria-label="Close"></button></a>
           </div>
         </div>
@@ -83,7 +83,7 @@
                     <p>The actual operators of these calls may and will rotate throughout the event in order to get the most out of our money (cries in event callsign fees).</p>
                     <hr>
                     <h3>How to join the madness?</h3>
-                    <a rel="noopener" target="_blank" href="https://discord.gg/y3yMfPPtdX"><img class="hover-shadow" src="join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>
+                    <a rel="noopener" target="_blank" href="https://discord.gg/4KWGgcTP"><img class="hover-shadow" src="join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
