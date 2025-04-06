@@ -34,7 +34,7 @@
                 <!-- the tab content -->
                 <article role="tabpanel" id="tab-A" style="size: A4">
                     <h3>What in the world is this "Meme Appreciation Month"?</h3>
-                    <p>The archives say it started in Canada as a way to spread joy & cheer to all the good little hams on the RF spectrum.</p>
+                    <p>The archives say it started in Canada as the brainchild of Ben (VA4BEN), as a way to spread joy & cheer to all the good little hams on the RF spectrum.</p>
                     <p>Honestly it's a way for young hams to have some fun, use a cool callsign and do a neat activity together.</p>
                     <p>The shenanigans started 2022 with the first ever Meme Apprecation Month and iconic callsigns such as VB4LIGMA, VB3YEET, VC9CATGIRL, VC3RIKROLL, VC3DEEZ and many more. </p>
                     <p>The second event in 2023 birthed callsigns such as VC9FEMBOY, DZ2NUTS, PD33ZDOGE and DL0NGCAT.</p>
@@ -83,7 +83,7 @@
                     <p>The actual operators of these calls may and will rotate throughout the event in order to get the most out of our money (cries in event callsign fees).</p>
                     <hr>
                     <h3>How to join the madness?</h3>
-                    <a rel="noopener" target="_blank" href="https://discord.gg/4KWGgcTP"><img class="hover-shadow" src="join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>
+                    <a rel="noopener" target="_blank" href="https://discord.gg/fyvjGkky7W"><img class="hover-shadow" src="join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
