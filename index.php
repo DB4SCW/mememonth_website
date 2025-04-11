@@ -30,6 +30,7 @@
                   <button role="tab" aria-controls="tab-G">Archive 2024</button>
                   <button role="tab" aria-controls="tab-H">Archive 2023</button>
                   <button role="tab" aria-controls="tab-I">Archive 2022</button>
+                  <button role="tab" aria-controls="tab-J">Legal stuff</button>
                 </menu>
                 <!-- the tab content -->
                 <article role="tabpanel" id="tab-A" style="size: A4">
@@ -246,6 +247,12 @@
                     
                     <h3>Award check:</h3>
                     <p>There were no awards in 2022.</p>
+                </article>
+                <article role="tabpanel" hidden id="tab-J">
+                    <h3>Impressum</h3>
+                    <p><a href="https://legal.wolf.taipei/impressum.html">Click here for Impressum</a></p>
+                    <h3>Privacy declaration</h3>
+                    <p><a href="https://legal.wolf.taipei/privacy.html">Click here for Privacy declaration</a></p>
                 </article>
             </section>
 
