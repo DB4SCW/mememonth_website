@@ -72,7 +72,8 @@
                       <p>IARU Region 2:
                         <ul>
                           <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4FX -->
-                          <!--<li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> --><!-- WT5A --> 
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2CATGIRL" style="color: black; padding-left: 5px;">VB2CATGIRL</a></li> <!-- VA2EMZ -->
+                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li> <!-- KO4ZMC -->
                         </ul>
                       </p>
                       <p>IARU Region 3:
