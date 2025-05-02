@@ -76,6 +76,7 @@
                           <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4FX -->
                           <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2CATGIRL" style="color: black; padding-left: 5px;">VB2CATGIRL</a></li> <!-- VA2EMZ -->
                           <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2CAP" style="color: black; padding-left: 5px;">VB2CAP</a></li> <!-- VA2EPR -->
+                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC2NORRIS" style="color: black; padding-left: 5px;">VC2NORRIS</a></li> <!-- VE2HKW -->
                           <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li> <!-- KO4ZMC -->
                         </ul>
                       </p>
