@@ -10,10 +10,25 @@
 
   <body>
     <?php
-      //open database and get maximum year of callsign
+      //open database
       $db = new PDO('sqlite:../database/mam.sqlite');
-      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM callsigns");
-      $maxYear = $yearstmt->fetch(PDO::FETCH_ASSOC)['max_year'];
+
+      //ensure database exists
+      $createTableSQL = "
+          CREATE TABLE IF NOT EXISTS callsigns (
+          id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+          year INTEGER NOT NULL,
+          region INTEGER NOT NULL,
+          callsign TEXT NOT NULL,
+          mainop TEXT NOT NULL,
+          flag TEXT NOT NULL
+      )";
+      $db->exec($createTableSQL);
+
+      //get maximum year of callsign
+      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM callsigns;");
+      $result = $yearstmt->fetch(PDO::FETCH_ASSOC);
+      $maxYear = $result['max_year'] ? $result['max_year'] : date("Y");
     ?>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
