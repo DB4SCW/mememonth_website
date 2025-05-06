@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <?php
+    //open database
+    $db = new PDO('sqlite:mam.sqlite');
+    ?>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
           <div class="title-bar-text">Information about Meme Appreciation Month 3: Found it!</div>
@@ -62,28 +66,62 @@
                       The following callsigns have been registered for Meme Appreciation Month:
                         <p>IARU Region 1:
                         <ul>
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DC0NORRIS" style="color: black; padding-left: 5px;">DC0NORRIS</a></li> <!-- DB4SCW -->
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0LOL" style="color: black; padding-left: 5px;">DL0LOL</a></li> <!-- DB4SCW -->
-                          <li><span class="flag-icon flag-icon-at flag-icon-squared"></span><a href="https://qrz.com/db/OE01MIKU" style="color: black; padding-left: 5px;">OE01MIKU</a></li> <!-- OE3OGC -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0OTY" style="color: black; padding-left: 5px;">GB0OTY</a></li> <!-- M0JEO -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB4NGS" style="color: black; padding-left: 5px;">GB4NGS</a></li> <!-- M0JEO -->
-                          <li><span class="flag-icon flag-icon-hu flag-icon-squared"></span><a href="https://qrz.com/db/HA6RID" style="color: black; padding-left: 5px;">HA6RID</a></li> <!-- HA1FLX -->
-                          <li><span class="flag-icon flag-icon-pl flag-icon-squared"></span><a href="https://qrz.com/db/SO2NIC" style="color: black; padding-left: 5px;">SO2NIC</a></li> <!-- SO2NIC -->
+                          <?php
+                          $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $stmt1 = $db->query($query1);
+                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                          if (count($results1) > 0) {
+                              foreach ($results1 as $row) {
+                                  $flag = htmlspecialchars($row['flag']);
+                                  $callsign = htmlspecialchars($row['callsign']);
+                                  $mainop = htmlspecialchars($row['mainop']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                              }
+                          } else {
+                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                          }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC2NORRIS" style="color: black; padding-left: 5px;">VC2NORRIS</a></li> <!-- VE2HKW -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2CATGIRL" style="color: black; padding-left: 5px;">VB2CATGIRL</a></li> <!-- VA2EMZ -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2CAP" style="color: black; padding-left: 5px;">VB2CAP</a></li> <!-- VA2EPR -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li> <!-- KO4ZMC -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4FX -->
+                        <?php
+                          $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $stmt1 = $db->query($query1);
+                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                          if (count($results1) > 0) {
+                              foreach ($results1 as $row) {
+                                  $flag = htmlspecialchars($row['flag']);
+                                  $callsign = htmlspecialchars($row['callsign']);
+                                  $mainop = htmlspecialchars($row['mainop']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                              }
+                          } else {
+                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                          }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li>For this region, there are no participants announced yet. Check back later!</li>
-                          <!--<li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>-->
+                        <?php
+                          $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $stmt1 = $db->query($query1);
+                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                          if (count($results1) > 0) {
+                              foreach ($results1 as $row) {
+                                  $flag = htmlspecialchars($row['flag']);
+                                  $callsign = htmlspecialchars($row['callsign']);
+                                  $mainop = htmlspecialchars($row['mainop']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                              }
+                          } else {
+                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                          }
+                          ?>
                         </ul>
                       </p>
                     </p>
@@ -95,7 +133,11 @@
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
-                    <p>The event will be active between June 15, 2025 and August 15, 2025.</p>
+                    <?php
+                      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM callsigns");
+                      $maxYear = $yearstmt->fetch(PDO::FETCH_ASSOC)['max_year'];
+                    ?>
+                    <p>The event will be active between June 15, <?php echo($maxYear)?> and August 15, <?php echo($maxYear)?>.</p>
                     <p>Between the group of operators behind this event, we will keep the meme calls on air for most of the event, surely with enough dial spinning you too can add a meme call to your logbook.</p>
                 </article>
                 <article role="tabpanel" hidden id="tab-D">
@@ -128,45 +170,62 @@
                       The following callsigns were on air for Meme Appreciation Month 4: The search for the Third from 2024-06-15 until 2024-08-15: 
                       <p>IARU Region 1:
                         <ul>
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DF4CEPALM" style="color: black; padding-left: 5px;">DF4CEPALM</a></li> <!-- DB4SCW -->
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0LOL" style="color: black; padding-left: 5px;">DL0LOL</a></li> <!-- DB4SCW -->
-                          <li><span class="flag-icon flag-icon-nl flag-icon-squared"></span><a href="https://qrz.com/db/PD6SENPAI" style="color: black; padding-left: 5px;">PD6SENPAI</a></li>
-                          <li><span class="flag-icon flag-icon-at flag-icon-squared"></span><a href="https://qrz.com/db/OE51DEEYE" style="color: black; padding-left: 5px;">OE51DEEYE</a></li>
-                          <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OO0F" style="color: black; padding-left: 5px;">OO0F</a></li> <!-- ON6RF -->
-                          <li><span class="flag-icon flag-icon-be flag-icon-squared"></span><a href="https://qrz.com/db/OR4L" style="color: black; padding-left: 5px;">OR4L</a></li> <!-- ON4PFD -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0OTY" style="color: black; padding-left: 5px;">GB0OTY</a></li> <!-- M0JEO -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0NGO" style="color: black; padding-left: 5px;">GB0NGO</a></li> <!-- M0JEO -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G4SSY" style="color: black; padding-left: 5px;">G4SSY</a></li> <!-- ON4PFD -->
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/G1SUS" style="color: black; padding-left: 5px;">G1SUS</a></li> <!-- G1SUS / ON4BCY / KZ4GE -->
-                          <li><span class="flag-icon flag-icon-se flag-icon-squared"></span><a href="https://qrz.com/db/7S0BRUH" style="color: black; padding-left: 5px;">7S0BRUH</a></li> <!-- SA0WII -->
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM5OON" style="color: black; padding-left: 5px;">TM5OON</a></li> <!-- F4IEY -->
-                          <li><span class="flag-icon flag-icon-ro flag-icon-squared"></span><a href="https://qrz.com/db/YR1CKROLL" style="color: black; padding-left: 5px;">YR1CKROLL</a></li> <!-- YO9LIG -->
-                          <li><span class="flag-icon flag-icon-es flag-icon-squared"></span><a href="https://qrz.com/db/EG1TBDICS" style="color: black; padding-left: 5px;">EG1TBDICS</a></li> <!-- EA1JAY -->
+                        <?php
+                          $query1 = "SELECT * FROM callsigns WHERE year = 2024 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $stmt1 = $db->query($query1);
+                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                          if (count($results1) > 0) {
+                              foreach ($results1 as $row) {
+                                  $flag = htmlspecialchars($row['flag']);
+                                  $callsign = htmlspecialchars($row['callsign']);
+                                  $mainop = htmlspecialchars($row['mainop']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                              }
+                          } else {
+                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                          }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4TESTING" style="color: black; padding-left: 5px;">VB4TESTING</a></li> <!-- VB4BEN -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2THEGAME" style="color: black; padding-left: 5px;">VB2THEGAME</a></li> <!-- VE2HKW -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB2KILOWAT" style="color: black; padding-left: 5px;">VB2KILOWAT</a></li> <!-- VA2XZA -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VA6INA" style="color: black; padding-left: 5px;">VA6INA</a></li> <!-- VA6ATC -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7ZALGO" style="color: black; padding-left: 5px;">VC7ZALGO</a></li> <!-- VE7QQ -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7HORSE" style="color: black; padding-left: 5px;">VC7HORSE</a></li> <!-- VE7QQ -->
-                          <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7F" style="color: black; padding-left: 5px;">VC7F</a></li> <!-- VE7QQ -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li> <!-- KO4ZMC -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K3K" style="color: black; padding-left: 5px;">K3K</a></li> <!-- ??? -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4T" style="color: black; padding-left: 5px;">K4T</a></li> <!-- WT5A --> 
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/N9E" style="color: black; padding-left: 5px;">N9E</a></li> <!-- WT5A --> 
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W4L" style="color: black; padding-left: 5px;">W4L</a></li> <!-- WT5A --> 
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1D" style="color: black; padding-left: 5px;">K1D</a></li> <!-- KO4VXD -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1L" style="color: black; padding-left: 5px;">K1L</a></li> <!-- KO4VXD -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W3B" style="color: black; padding-left: 5px;">W3B</a></li> <!-- KO4ZMC -->
-                          <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K4B" style="color: black; padding-left: 5px;">K4B</a></li> <!-- KO4ZMC -->
+                        <?php
+                          $query1 = "SELECT * FROM callsigns WHERE year = 2024 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $stmt1 = $db->query($query1);
+                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                          if (count($results1) > 0) {
+                              foreach ($results1 as $row) {
+                                  $flag = htmlspecialchars($row['flag']);
+                                  $callsign = htmlspecialchars($row['callsign']);
+                                  $mainop = htmlspecialchars($row['mainop']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                              }
+                          } else {
+                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                          }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DU0LINGO" style="color: black; padding-left: 5px;">DU0LINGO</a></li>
+                        <?php
+                          $query1 = "SELECT * FROM callsigns WHERE year = 2024 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $stmt1 = $db->query($query1);
+                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                          if (count($results1) > 0) {
+                              foreach ($results1 as $row) {
+                                  $flag = htmlspecialchars($row['flag']);
+                                  $callsign = htmlspecialchars($row['callsign']);
+                                  $mainop = htmlspecialchars($row['mainop']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                              }
+                          } else {
+                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                          }
+                          ?>
                         </ul>
                       </p>
                     </p>
@@ -180,38 +239,62 @@
                       The following callsigns were on air for Meme Appreciation Month 2: Electric Boogaloo from 2023-06-15 until 2023-08-15: 
                       <p>IARU Region 1:
                         <ul>
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0LOL" style="color: black; padding-left: 5px;">DL0LOL</a></li>
-                          <li><span class="flag-icon flag-icon-de flag-icon-squared"></span><a href="https://qrz.com/db/DL0NGCAT" style="color: black; padding-left: 5px;">DL0NGCAT</a></li>
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB4LLs" style="color: black; padding-left: 5px;">GB4LLS</a></li>
-                          <li><span class="flag-icon flag-icon-gb flag-icon-squared"></span><a href="https://qrz.com/db/GB0NPC" style="color: black; padding-left: 5px;">GB0NPC</a></li>
-                          <li><span class="flag-icon flag-icon-nl flag-icon-squared"></span><a href="https://qrz.com/db/PD33ZDOGE" style="color: black; padding-left: 5px;">PD33ZDOGE</a></li>
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM0GUS" style="color: black; padding-left: 5px;">TM0GUS</a></li>
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM4RIO" style="color: black; padding-left: 5px;">TM4RIO</a></li>
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM0NKAS" style="color: black; padding-left: 5px;">TM0NKAS</a></li>
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2023 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4LLS" style="color: black; padding-left: 5px;">VB4LLS</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB1FLIP" style="color: black; padding-left: 5px;">VB1FLIP</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB3BACON" style="color: black; padding-left: 5px;">VB3BACON</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB6WOKE" style="color: black; padding-left: 5px;">VB6WOKE</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC7BEPIS" style="color: black; padding-left: 5px;">VC7BEPIS</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC9FEMBOY" style="color: black; padding-left: 5px;">VC9FEMBOY</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC2STONKS" style="color: black; padding-left: 5px;">VC2STONKS</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC3PWEOR" style="color: black; padding-left: 5px;">VC3PWEOR</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K3K" style="color: black; padding-left: 5px;">K3K</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K0K" style="color: black; padding-left: 5px;">K0K</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W4P" style="color: black; padding-left: 5px;">W4P</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/N1O" style="color: black; padding-left: 5px;">N1O</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K1L" style="color: black; padding-left: 5px;">K1L</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/N9E" style="color: black; padding-left: 5px;">N9E</a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/W0W" style="color: black; padding-left: 5px;">W0W</a></li>
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2023 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                          <li><span class="flag-icon flag-icon-ph flag-icon-squared"></span><a href="https://qrz.com/db/DZ2NUTS" style="color: black; padding-left: 5px;">DZ2NUTS</a></li>
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2023 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
+                          ?>
                         </ul>
                       </p>
                     </p>
@@ -226,21 +309,42 @@
                       The following callsigns were on air for the first ever Meme Appreciation Month from 2022-06-25 until 2022-08-05:
                       <p>IARU Region 1:
                         <ul>
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM1SSOU" style="color: black; padding-left: 5px;">TM1SSOU</a></li>
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM0WO" style="color: black; padding-left: 5px;">TM0WO</a></li>
-                          <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM0RBIN" style="color: black; padding-left: 5px;">TM0RBIN</a></li>
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2022 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB4LIGMA" style="color: black; padding-left: 5px;">VB4LIGMA</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB3YEET" style="color: black; padding-left: 5px;">VB3YEET</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC9CATGIRL" style="color: black; padding-left: 5px;">VC9CATGIRL</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC3DEEZ" style="color: black; padding-left: 5px;">VC3DEEZ</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB3HARAMBE" style="color: black; padding-left: 5px;">VB3HARAMBE</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VC3RIKROLL" style="color: black; padding-left: 5px;">VC3RIKROLL</a></li>
-                        <li><span class="flag-icon flag-icon-ca flag-icon-squared"></span><a href="https://qrz.com/db/VB6DANK " style="color: black; padding-left: 5px;">VB6DANK </a></li>
-                        <li><span class="flag-icon flag-icon-us flag-icon-squared"></span><a href="https://qrz.com/db/K3K" style="color: black; padding-left: 5px;">K3K</a></li>
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2022 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
+                          ?>
                         </ul>
                       </p>
                       <p>IARU Region 3:
