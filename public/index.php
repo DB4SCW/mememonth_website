@@ -10,8 +10,10 @@
 
   <body>
     <?php
-    //open database
-    $db = new PDO('sqlite:../database/mam.sqlite');
+      //open database and get maximum year of callsign
+      $db = new PDO('sqlite:../database/mam.sqlite');
+      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM callsigns");
+      $maxYear = $yearstmt->fetch(PDO::FETCH_ASSOC)['max_year'];
     ?>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
@@ -67,60 +69,60 @@
                         <p>IARU Region 1:
                         <ul>
                           <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
-                          $stmt1 = $db->query($query1);
-                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                          if (count($results1) > 0) {
-                              foreach ($results1 as $row) {
-                                  $flag = htmlspecialchars($row['flag']);
-                                  $callsign = htmlspecialchars($row['callsign']);
-                                  $mainop = htmlspecialchars($row['mainop']);
-                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                              }
-                          } else {
-                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                          }
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
                           ?>
                         </ul>
                       </p>
                       <p>IARU Region 2:
                         <ul>
-                        <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
-                          $stmt1 = $db->query($query1);
-                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                          if (count($results1) > 0) {
-                              foreach ($results1 as $row) {
-                                  $flag = htmlspecialchars($row['flag']);
-                                  $callsign = htmlspecialchars($row['callsign']);
-                                  $mainop = htmlspecialchars($row['mainop']);
-                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                              }
-                          } else {
-                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                          }
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
                           ?>
                         </ul>
                       </p>
                       <p>IARU Region 3:
                         <ul>
-                        <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
-                          $stmt1 = $db->query($query1);
-                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+                          <?php
+                            $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $stmt1 = $db->query($query1);
+                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
-                          if (count($results1) > 0) {
-                              foreach ($results1 as $row) {
-                                  $flag = htmlspecialchars($row['flag']);
-                                  $callsign = htmlspecialchars($row['callsign']);
-                                  $mainop = htmlspecialchars($row['mainop']);
-                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                              }
-                          } else {
-                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                          }
+                            if (count($results1) > 0) {
+                                foreach ($results1 as $row) {
+                                    $flag = htmlspecialchars($row['flag']);
+                                    $callsign = htmlspecialchars($row['callsign']);
+                                    $mainop = htmlspecialchars($row['mainop']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                }
+                            } else {
+                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                            }
                           ?>
                         </ul>
                       </p>
@@ -133,10 +135,6 @@
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
-                    <?php
-                      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM callsigns");
-                      $maxYear = $yearstmt->fetch(PDO::FETCH_ASSOC)['max_year'];
-                    ?>
                     <p>The event will be active between June 15, <?php echo($maxYear)?> and August 15, <?php echo($maxYear)?>.</p>
                     <p>Between the group of operators behind this event, we will keep the meme calls on air for most of the event, surely with enough dial spinning you too can add a meme call to your logbook.</p>
                 </article>
