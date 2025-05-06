@@ -11,7 +11,7 @@
   <body>
     <?php
     //open database
-    $db = new PDO('sqlite:mam.sqlite');
+    $db = new PDO('sqlite:../database/mam.sqlite');
     ?>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
