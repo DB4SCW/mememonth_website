@@ -15,7 +15,7 @@
     ?>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
-          <div class="title-bar-text">Information about Meme Appreciation Month 3: Found it!</div>
+          <div class="title-bar-text">Information about Meme Appreciation Month 3: Chuck Norris Found it!</div>
           <div class="title-bar-controls">
             <a href="https://mememonth.org"><button aria-label="Minimize"></button></a>
             <a href="https://mememonth.org"><button aria-label="Maximize"></button></a>
@@ -44,7 +44,7 @@
                     <p>The shenanigans started 2022 with the first ever Meme Apprecation Month and iconic callsigns such as VB4LIGMA, VB3YEET, VC9CATGIRL, VC3RIKROLL, VC3DEEZ and many more. </p>
                     <p>The second event in 2023 birthed callsigns such as VC9FEMBOY, DZ2NUTS, PD33ZDOGE and DL0NGCAT.</p>
                     <p>2024 was the fourth installment already. Well. Kind of. We lost the third so we were looking for it frantically.</p>
-                    <p>2025 is the third installment, since we were successful in finding it in 2024.</p>
+                    <p>2025 is the third installment, since Chuck Norris found it in 2024.</p>
                     <h4>What is a meme and why does it have to be appreciated?</h4>
                     <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
                     <p>To make it short - a meme is something most young people know and find funny.</p>
