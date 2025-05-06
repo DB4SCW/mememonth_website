@@ -188,7 +188,7 @@
                 foreach ($months as $monthrow) {
                 ?>
                   <article role="tabpanel" hidden id="tab-<?php echo("$letter");?>">
-                    <h3><?php echo($row['title']);?></h3>
+                    <h3><?php echo($monthrow['title']);?></h3>
                     <h3 style="font-size: 20px;">Callsign Archive</h3>
                     <p>
                       The following callsigns were on air for <?php echo($monthrow['title']);?> from <?php echo($monthrow['from']);?> until <?php echo($monthrow['to']);?>: 
