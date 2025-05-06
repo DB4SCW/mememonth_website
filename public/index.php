@@ -22,17 +22,48 @@
           callsign TEXT NOT NULL,
           mainop TEXT NOT NULL,
           flag TEXT NOT NULL
-      )";
+      );";
       $db->exec($createTableSQL);
 
-      //get maximum year of callsign
-      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM callsigns;");
+      $createTableSQL = "
+          CREATE TABLE IF NOT EXISTS mememonths (
+          id	INTEGER NOT NULL UNIQUE,
+          year	INTEGER NOT NULL UNIQUE,
+          title	TEXT NOT NULL,
+          [from]	TEXT NOT NULL,
+          [to]	TEXT NOT NULL,
+          PRIMARY KEY(id AUTOINCREMENT)
+      );";
+      $db->exec($createTableSQL);
+
+      //get current Meme Month Year
+      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM mememonths;");
       $result = $yearstmt->fetch(PDO::FETCH_ASSOC);
       $maxYear = $result['max_year'] ? $result['max_year'] : date("Y");
+
+      //get current Meme Month data
+      $sql = "SELECT * FROM mememonths WHERE year = :year;";
+      $params[':year'] = (int)$maxYear;
+      $stmt = $db->prepare($sql);
+      $stmt->execute($params);
+      $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+      $current_title = $result['title'];
+      $current_from = $result['from'];
+      $current_to = $result['to'];
+      $current_year = $result['year'];
+
+      //get all events for iteration
+      $stmt = $db->query("SELECT * from mememonths WHERE year != (SELECT MAX(year) AS max_year FROM mememonths) ORDER BY year DESC;");
+      $months = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      //define starting letter for tabs
+      $start_letter = "G";
+
     ?>
     <div class="window" style="min-width: 640px; max-width: 1000px; width: flex;font-size: 14px;">
         <div class="title-bar">
-          <div class="title-bar-text">Information about Meme Appreciation Month 3: Chuck Norris Found it!</div>
+          <div class="title-bar-text">Information about <?php echo($current_title);?></div>
           <div class="title-bar-controls">
             <a href="https://mememonth.org"><button aria-label="Minimize"></button></a>
             <a href="https://mememonth.org"><button aria-label="Maximize"></button></a>
@@ -48,10 +79,15 @@
                   <button role="tab" aria-controls="tab-D">Where and what?</button>
                   <button role="tab" aria-controls="tab-E">Why?</button>
                   <button role="tab" aria-controls="tab-F">QSL?</button>
-                  <button role="tab" aria-controls="tab-G">Archive 2024</button>
-                  <button role="tab" aria-controls="tab-H">Archive 2023</button>
-                  <button role="tab" aria-controls="tab-I">Archive 2022</button>
-                  <button role="tab" aria-controls="tab-J">Legal stuff</button>
+                  <!-- create archive tabs dynamically -->
+                  <?php 
+                    $letter = $start_letter;
+                    foreach ($months as $row) {
+                      echo "<button role=\"tab\" aria-controls=\"tab-" . $letter . "\">Archive " . $row['year'] . "</button>";
+                      $letter++;
+                    }
+                  ?>
+                  <button role="tab" aria-controls="tab-<?php echo($letter);?>">Legal stuff</button>
                 </menu>
                 <!-- the tab content -->
                 <article role="tabpanel" id="tab-A" style="size: A4">
@@ -66,10 +102,10 @@
                     <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
                     <p>To make it short - a meme is something most young people know and find funny.</p>
                     <p>If this funny bit makes it into amateur radio and attracts the young folk - perfect, right?</p>
-                    <h4>Meme Appreciation Award 2025</h4>
+                    <h4>Meme Appreciation Award <?php echo($current_year);?></h4>
                     <p>This time, for your QSOs with all the meme callsigns, you can earn yourself some fancy awards!</p>
                     <p>You can check if you qualify and download your award on this nifty webpage:</p>
-                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2025"><button>Check your award here</button></a>
+                    <a href=<?php echo("\"https://hamawardz.app/logcheck/meme-appreciation-award-" . $current_year . "\"");?>><button>Check your award here</button></a>
                     <p></p>
                     <hr>
                     <h4>This info in foreign languages:</h4>
@@ -81,10 +117,15 @@
                     <h3>Who is in this? How much LIDs can there be?</h3>
                     <p>
                       The following callsigns have been registered for Meme Appreciation Month:
+                        
+                        <!-- iterate through regions and get current participants -->
+                        <?php
+                        for ($i = 1; $i <= 3; $i++) {
+                        ?>
                         <p>IARU Region 1:
                         <ul>
                           <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $query1 = "SELECT * FROM callsigns WHERE year = " . $current_year . " AND region = " . $i . " AND hide = 0 ORDER BY sort ASC, id ASC";
                             $stmt1 = $db->query($query1);
                             $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
@@ -101,46 +142,10 @@
                           ?>
                         </ul>
                       </p>
-                      <p>IARU Region 2:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
-                      <p>IARU Region 3:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2025 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
+                      <?php
+                        }
+                      ?>
+                      <!-- Iteration ends here -->
                     </p>
                     
                     <p>The actual operators of these calls may and will rotate throughout the event in order to get the most out of our money (cries in event callsign fees).</p>
@@ -150,7 +155,7 @@
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
-                    <p>The event will be active between June 15, <?php echo($maxYear)?> and August 15, <?php echo($maxYear)?>.</p>
+                    <p>The event will be active between <?php echo($current_from)?> and <?php echo($current_to)?>.</p>
                     <p>Between the group of operators behind this event, we will keep the meme calls on air for most of the event, surely with enough dial spinning you too can add a meme call to your logbook.</p>
                 </article>
                 <article role="tabpanel" hidden id="tab-D">
@@ -176,15 +181,26 @@
                   <img style="width: auto; height: 200px;" src="DL0NGCAT_QSL_card.jpg">
                   <img style="width: auto; height: 200px;" src="DF4CEPALM_QSL_card.jpg">
                 </article>
-                <article role="tabpanel" hidden id="tab-G">
-                    <h3>Meme Appreciation Month 4: The search for the Third</h3>
+
+                <!-- iterate over past events -->
+                <?php
+                $letter = $start_letter;
+                foreach ($months as $monthrow) {
+                ?>
+                  <article role="tabpanel" hidden id="tab-<?php echo("$letter");?>">
+                    <h3><?php echo($row['title']);?></h3>
                     <h3 style="font-size: 20px;">Callsign Archive</h3>
                     <p>
-                      The following callsigns were on air for Meme Appreciation Month 4: The search for the Third from 2024-06-15 until 2024-08-15: 
-                      <p>IARU Region 1:
+                      The following callsigns were on air for <?php echo($monthrow['title']);?> from <?php echo($monthrow['from']);?> until <?php echo($monthrow['to']);?>: 
+                      
+                      <!-- iterate over regions and load callsigns -->
+                      <?php
+                      for ($i = 1; $i <= 3; $i++) {
+                      ?>
+                      <p>IARU Region <?php echo($i);?>:
                         <ul>
                         <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = 2024 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $query1 = "SELECT * FROM callsigns WHERE year = " . $monthrow['year'] . " AND region = " . $i .  " AND hide = 0 ORDER BY sort ASC, id ASC";
                           $stmt1 = $db->query($query1);
                           $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
@@ -196,181 +212,40 @@
                                   echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
                               }
                           } else {
-                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
+                              echo "<li>For this region, there were no participants.</li>";
                           }
                           ?>
                         </ul>
                       </p>
-                      <p>IARU Region 2:
-                        <ul>
-                        <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = 2024 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
-                          $stmt1 = $db->query($query1);
-                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                          if (count($results1) > 0) {
-                              foreach ($results1 as $row) {
-                                  $flag = htmlspecialchars($row['flag']);
-                                  $callsign = htmlspecialchars($row['callsign']);
-                                  $mainop = htmlspecialchars($row['mainop']);
-                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                              }
-                          } else {
-                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                          }
-                          ?>
-                        </ul>
-                      </p>
-                      <p>IARU Region 3:
-                        <ul>
-                        <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = 2024 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
-                          $stmt1 = $db->query($query1);
-                          $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                          if (count($results1) > 0) {
-                              foreach ($results1 as $row) {
-                                  $flag = htmlspecialchars($row['flag']);
-                                  $callsign = htmlspecialchars($row['callsign']);
-                                  $mainop = htmlspecialchars($row['mainop']);
-                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                              }
-                          } else {
-                              echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                          }
-                          ?>
-                        </ul>
+                      <?php
+                      }
+                      ?>
+                      <!-- Region iteration ends here -->
                       </p>
                     </p>
-                    <h3>Award check:</h3>
-                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2024"><button>Awardcheck Meme Appreciation Month 4 (2024)</button></a>
-                </article>
-                <article role="tabpanel" hidden id="tab-H">
-                    <h3>Meme Appreciation Month 2: Electric Boogaloo</h3>
-                    <h3 style="font-size: 20px;">Callsign Archive</h3>
-                    <p>
-                      The following callsigns were on air for Meme Appreciation Month 2: Electric Boogaloo from 2023-06-15 until 2023-08-15: 
-                      <p>IARU Region 1:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2023 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+                    <h3>Award check:</h3> 
+                    <?php 
+                    if($monthrow['award'] == 0)
+                    {
+                    ?>
+                    <p>There were no awards in <?php echo($monthrow['year']);?>.</p>
+                    <?php 
+                    }else{
+                    ?>
+                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-<?php echo($monthrow['year']); ?>"><button>Awardcheck (<?php echo($monthrow['year']); ?>)</button></a>
+                    <?php
+                    }
+                    ?>
+                    <!-- Event iteration stops here -->
+                  </article>
 
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
-                      <p>IARU Region 2:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2023 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+                <?php
+                  $letter++;
+                }
+                ?>
 
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
-                      <p>IARU Region 3:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2023 AND region = 3 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
-                    </p>
-                    
-                    <h3>Award check:</h3>
-                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-2023"><button>Awardcheck Meme Appreciation Month 2 (2023)</button></a>
-                </article>
-                <article role="tabpanel" hidden id="tab-I">
-                    <h3>Meme Appreciation Month</h3>
-                    <h3 style="font-size: 20px;">Callsign Archive</h3>
-                    <p>
-                      The following callsigns were on air for the first ever Meme Appreciation Month from 2022-06-25 until 2022-08-05:
-                      <p>IARU Region 1:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2022 AND region = 1 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
-                      <p>IARU Region 2:
-                        <ul>
-                          <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = 2022 AND region = 2 AND hide = 0 ORDER BY sort ASC, id ASC";
-                            $stmt1 = $db->query($query1);
-                            $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-                            if (count($results1) > 0) {
-                                foreach ($results1 as $row) {
-                                    $flag = htmlspecialchars($row['flag']);
-                                    $callsign = htmlspecialchars($row['callsign']);
-                                    $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
-                                }
-                            } else {
-                                echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
-                            }
-                          ?>
-                        </ul>
-                      </p>
-                      <p>IARU Region 3:
-                        <ul>
-                          <li>No Calls were registered in Region 3 in 2022.</li>
-                        </ul>
-                      </p>
-                    </p>
-                    
-                    <h3>Award check:</h3>
-                    <p>There were no awards in 2022.</p>
-                </article>
-                <article role="tabpanel" hidden id="tab-J">
+                <!-- Legal stuff here -->
+                <article role="tabpanel" hidden id="tab-<?php echo($letter);?>">
                     <h3>Impressum</h3>
                     <p><a href="https://legal.wolf.taipei/impressum.html">Click here for Impressum</a></p>
                     <h3>Privacy declaration</h3>
