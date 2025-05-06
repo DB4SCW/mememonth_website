@@ -11,9 +11,12 @@ try {
     $region = $_POST['region'] ?? $_GET['region'] ?? null;
 
     // validate year
-    if (!ctype_digit($year)) {
-        echo json_encode(["error" => "Invalid or missing 'year' parameter."]);
-        exit;
+    if($year != null)
+    {
+        if (!ctype_digit($year)) {
+            echo json_encode(["error" => "Invalid or missing 'year' parameter."]);
+            exit;
+        }
     }
 
     //validate region
@@ -32,17 +35,21 @@ try {
     }
 
     // build base query and parameters
-    $sql = "SELECT year, region, callsign, mainop, flag, sort FROM callsigns WHERE hide = 0 AND year = :year";
-    $params = [':year' => (int)$year];
+    $sql = "SELECT year, region, callsign, mainop, flag, sort FROM callsigns WHERE hide = 0";
 
-    // if region is provided and valid, add it to query
+    // add filters dynamically
+    if ($year !== null) {
+        $sql .= " AND year = :year";
+        $params[':year'] = (int)$year;
+    }
+
     if ($region !== null) {
         $sql .= " AND region = :region";
         $params[':region'] = (int)$region;
     }
 
     // add sorting
-    $sql .= " ORDER BY sort ASC, callsign ASC";
+    $sql .= " ORDER BY year ASC, region ASC, sort ASC, id ASC";
 
     // prepare, bind, and execute
     $stmt = $db->prepare($sql);
