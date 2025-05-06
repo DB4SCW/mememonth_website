@@ -223,7 +223,7 @@
                     <h3>Meme Appreciation Month</h3>
                     <h3 style="font-size: 20px;">Callsign Archive</h3>
                     <p>
-                      The following callsigns were on air for the first ever Meme Appreciation Month from 2023-06-25 until 2023-08-05:
+                      The following callsigns were on air for the first ever Meme Appreciation Month from 2022-06-25 until 2022-08-05:
                       <p>IARU Region 1:
                         <ul>
                           <li><span class="flag-icon flag-icon-fr flag-icon-squared"></span><a href="https://qrz.com/db/TM1SSOU" style="color: black; padding-left: 5px;">TM1SSOU</a></li>
