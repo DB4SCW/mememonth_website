@@ -103,7 +103,6 @@
                     <?php
                     foreach ($descriptions as $description) {
                       echo "<p>" . $description['description'] . "</p>";
-                      $letter++;
                     }
                     ?>
                     <h4>What is a meme and why does it have to be appreciated?</h4>
