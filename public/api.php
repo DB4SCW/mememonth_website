@@ -14,6 +14,7 @@ try {
     if($year != null)
     {
         if (!ctype_digit($year)) {
+            http_response_code(400);
             echo json_encode(["error" => "Invalid or missing 'year' parameter."]);
             exit;
         }
@@ -23,12 +24,14 @@ try {
     if($region != null)
     {
         if (!ctype_digit($region)) {
+            http_response_code(400);
             echo json_encode(["error" => "Invalid 'region' parameter."]);
             exit;
         }
 
         if($region < 1 or $region > 3)
         {
+            http_response_code(418);
             echo json_encode(["error" => "Invalid 'region' parameter."]);
             exit;
         }
@@ -59,10 +62,12 @@ try {
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // return JSON
+    http_response_code(200);
     echo json_encode($results);
 
 } catch (PDOException $e) {
     // return error JSON
+    http_response_code(418);
     echo json_encode(["error" => "Database error: " . $e->getMessage()]);
     exit;
 }
