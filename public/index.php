@@ -32,6 +32,8 @@
           title	TEXT NOT NULL,
           [from]	TEXT NOT NULL,
           [to]	TEXT NOT NULL,
+          award	INTEGER NOT NULL DEFAULT 1,
+          description	INTEGER NOT NULL,
           PRIMARY KEY(id AUTOINCREMENT)
       );";
       $db->exec($createTableSQL);
@@ -52,6 +54,10 @@
       $current_from = $result['from'];
       $current_to = $result['to'];
       $current_year = $result['year'];
+
+      //get all descriptions for iteration
+      $stmt = $db->query("SELECT year, description from mememonths ORDER BY year ASC;");
+      $descriptions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       //get all events for iteration
       $stmt = $db->query("SELECT * from mememonths WHERE year != (SELECT MAX(year) AS max_year FROM mememonths) ORDER BY year DESC;");
@@ -94,10 +100,12 @@
                     <h3>What in the world is this "Meme Appreciation Month"?</h3>
                     <p>The archives say it started in Canada as the brainchild of Ben (VA4BEN), as a way to spread joy & cheer to all the good little hams on the RF spectrum.</p>
                     <p>Honestly it's a way for young hams to have some fun, use a cool callsign and do a neat activity together.</p>
-                    <p>The shenanigans started 2022 with the first ever Meme Apprecation Month and iconic callsigns such as VB4LIGMA, VB3YEET, VC9CATGIRL, VC3RIKROLL, VC3DEEZ and many more. </p>
-                    <p>The second event in 2023 birthed callsigns such as VC9FEMBOY, DZ2NUTS, PD33ZDOGE and DL0NGCAT.</p>
-                    <p>2024 was the fourth installment already. Well. Kind of. We lost the third so we were looking for it frantically.</p>
-                    <p>2025 is the third installment, since Chuck Norris found it in 2024.</p>
+                    <?php
+                    foreach ($descriptions as $description) {
+                      echo "<p>" . $description['description'] . "</p>";
+                      $letter++;
+                    }
+                    ?>
                     <h4>What is a meme and why does it have to be appreciated?</h4>
                     <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
                     <p>To make it short - a meme is something most young people know and find funny.</p>
