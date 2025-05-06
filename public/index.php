@@ -86,7 +86,7 @@
                   <button role="tab" aria-controls="tab-E">Why?</button>
                   <button role="tab" aria-controls="tab-F">QSL?</button>
                   <!-- create archive tabs dynamically -->
-                  <?php 
+                  <?php
                     $letter = $start_letter;
                     foreach ($months as $row) {
                       echo "<button role=\"tab\" aria-controls=\"tab-" . $letter . "\">Archive " . $row['year'] . "</button>";
@@ -124,7 +124,7 @@
                     <h3>Who is in this? How much LIDs can there be?</h3>
                     <p>
                       The following callsigns have been registered for Meme Appreciation Month:
-                        
+
                         <!-- iterate through regions and get current participants -->
                         <?php
                         for ($i = 1; $i <= 3; $i++) {
@@ -154,7 +154,7 @@
                       ?>
                       <!-- Iteration ends here -->
                     </p>
-                    
+
                     <p>The actual operators of these calls may and will rotate throughout the event in order to get the most out of our money (cries in event callsign fees).</p>
                     <hr>
                     <h3>How to join the madness?</h3>
@@ -199,7 +199,7 @@
                     <h3 style="font-size: 20px;">Callsign Archive</h3>
                     <p>
                       The following callsigns were on air for <?php echo($monthrow['title']);?> from <?php echo($monthrow['from']);?> until <?php echo($monthrow['to']);?>: 
-                      
+
                       <!-- iterate over regions and load callsigns -->
                       <?php
                       for ($i = 1; $i <= 3; $i++) {
@@ -230,13 +230,13 @@
                       <!-- Region iteration ends here -->
                       </p>
                     </p>
-                    <h3>Award check:</h3> 
-                    <?php 
+                    <h3>Award check:</h3>
+                    <?php
                     if($monthrow['award'] == 0)
                     {
                     ?>
                     <p>There were no awards in <?php echo($monthrow['year']);?>.</p>
-                    <?php 
+                    <?php
                     }else{
                     ?>
                     <a href="https://hamawardz.app/logcheck/meme-appreciation-award-<?php echo($monthrow['year']); ?>"><button>Awardcheck (<?php echo($monthrow['year']); ?>)</button></a>
