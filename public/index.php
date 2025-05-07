@@ -256,10 +256,40 @@
 
                 <!-- Legal stuff here -->
                 <article role="tabpanel" hidden id="tab-<?php echo($letter);?>">
-                    <h3>Impressum</h3>
-                    <p><a href="https://legal.wolf.taipei/impressum.html">Click here for Impressum</a></p>
-                    <h3>Privacy declaration</h3>
-                    <p><a href="https://legal.wolf.taipei/privacy.html">Click here for Privacy declaration</a></p>
+                  <?php
+                    // try to read links for legal data from file
+                    $legal_filename = "../database/legal_links.json";
+                    $legaldata = [];
+                    
+                    //check if file exists, only then load legaldata
+                    if(file_exists($legal_filename))
+                    {
+                      try {
+                        $jsonString = file_get_contents($legal_filename);
+                        // Decode JSON into an associative array
+                        $legaldata = json_decode($jsonString, true);
+                      } catch (\Throwable $th) {
+                        $legaldata = [];
+                      }
+                    }
+
+                    //add impressum link if data exists
+                    if(array_key_exists('impressum', $legaldata)) 
+                    {
+                    ?>
+                      <h3>Impressum</h3>
+                      <p><a href="<?php echo($legaldata['impressum']); ?>">Click here for Impressum</a></p>
+                    <?php
+                    }    
+                      //add data protection link if data exists
+                      if(array_key_exists('data_protection', $legaldata)) 
+                      {
+                    ?>
+                      <h3>Privacy declaration</h3>
+                      <p><a href="<?php echo($legaldata['data_protection']); ?>">Click here for Privacy declaration</a></p>
+                      <?php
+                      }
+                  ?>
                 </article>
             </section>
 
