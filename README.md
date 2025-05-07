@@ -22,7 +22,7 @@ This means once you like to change over to the next years event, just insert a n
 You can then add the callsigns for this new event and the page will fill up again.
 
 ## API
-This website provides an API for other websites to use it as an authoratativ data source for registered special event callsigns. 
+This website provides an API for other websites to use it as an authoritative data source for registered special event callsigns. 
 You can reach it at: ```https://your.site.here/api.php```
 
 If you just call it like this, it will give you all callsigns ever as a JSON file. 
