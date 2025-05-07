@@ -34,3 +34,8 @@ If you do provide both GET and POST values for the same parameter, POST values w
 
 For example, this will give you all callsigns in 2024 registered in IARU region 1 as JSON:
 ```https://your.site.here/api.php?year=2024&region=1```
+
+## URLs
+There is a urls.example.json file in the database directory. This contains urls to your hamawardz instance, as well as links to impressum and data protection declaration, if you need those. 
+
+While hamawardz url is absolutely necessary (unless you have no awards), impressum and data protection urls can be removed. They will not show up on the site then.
