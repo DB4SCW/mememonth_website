@@ -10,6 +10,26 @@
 
   <body>
     <?php
+
+      // try to read links for url data from file
+      $urls_filename = "../database/urls.json";
+      $urldata = [];
+      
+      //check if file exists, only then load urldata
+      if(file_exists($urls_filename))
+      {
+        try {
+          $jsonString = file_get_contents($urls_filename);
+          // Decode JSON into an associative array
+          $urldata = json_decode($jsonString, true);
+        } catch (\Throwable $th) {
+          $urldata = [];
+        }
+      }
+
+      //get hamawardz basebath
+      $hamaward_basepath = array_key_exists('hamawardz_basepath', $urldata) ? $urldata['hamawardz_basepath'] : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ?ref=';
+
       //open database
       $db = new PDO('sqlite:../database/mam.sqlite');
 
@@ -114,7 +134,7 @@
                     <h4>Meme Appreciation Award <?php echo($current_year);?></h4>
                     <p>This time, for your QSOs with all the meme callsigns, you can earn yourself some fancy awards!</p>
                     <p>You can check if you qualify and download your award on this nifty webpage:</p>
-                    <a href=<?php echo("\"https://hamawardz.app/logcheck/meme-appreciation-award-" . $current_year . "\"");?>><button>Check your award here</button></a>
+                    <a href=<?php echo("\"" . $hamaward_basepath . $current_year . "\"");?>><button>Check your award here</button></a>
                     <p></p>
                     <hr>
                     <h4>This info in foreign languages:</h4>
@@ -242,7 +262,7 @@
                     <?php
                     }else{
                     ?>
-                    <a href="https://hamawardz.app/logcheck/meme-appreciation-award-<?php echo($monthrow['year']); ?>"><button>Awardcheck (<?php echo($monthrow['year']); ?>)</button></a>
+                    <a href="<?php echo($hamaward_basepath . $monthrow['year']); ?>"><button>Awardcheck (<?php echo($monthrow['year']); ?>)</button></a>
                     <?php
                     }
                     ?>
@@ -257,36 +277,20 @@
                 <!-- Legal stuff here -->
                 <article role="tabpanel" hidden id="tab-<?php echo($letter);?>">
                   <?php
-                    // try to read links for legal data from file
-                    $legal_filename = "../database/legal_links.json";
-                    $legaldata = [];
-                    
-                    //check if file exists, only then load legaldata
-                    if(file_exists($legal_filename))
-                    {
-                      try {
-                        $jsonString = file_get_contents($legal_filename);
-                        // Decode JSON into an associative array
-                        $legaldata = json_decode($jsonString, true);
-                      } catch (\Throwable $th) {
-                        $legaldata = [];
-                      }
-                    }
-
                     //add impressum link if data exists
-                    if(array_key_exists('impressum', $legaldata)) 
+                    if(array_key_exists('impressum', $urldata)) 
                     {
                     ?>
                       <h3>Impressum</h3>
-                      <p><a href="<?php echo($legaldata['impressum']); ?>">Click here for Impressum</a></p>
+                      <p><a href="<?php echo($urldata['impressum']); ?>">Click here for Impressum</a></p>
                     <?php
                     }    
                       //add data protection link if data exists
-                      if(array_key_exists('data_protection', $legaldata)) 
+                      if(array_key_exists('data_protection', $urldata)) 
                       {
                     ?>
                       <h3>Privacy declaration</h3>
-                      <p><a href="<?php echo($legaldata['data_protection']); ?>">Click here for Privacy declaration</a></p>
+                      <p><a href="<?php echo($urldata['data_protection']); ?>">Click here for Privacy declaration</a></p>
                       <?php
                       }
                   ?>
