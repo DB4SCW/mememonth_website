@@ -106,6 +106,7 @@
                       echo "<p>" . $description['description'] . "</p>";
                     }
                     ?>
+                    <p>The title for this years event is <?php echo($current_title);?></p>
                     <h4>What is a meme and why does it have to be appreciated?</h4>
                     <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
                     <p>To make it short - a meme is something most young people know and find funny.</p>
@@ -125,7 +126,7 @@
                 <article role="tabpanel" hidden id="tab-B">
                     <h3>Who is in this? How much LIDs can there be?</h3>
                     <p>
-                      The following callsigns have been registered for Meme Appreciation Month:
+                      The following callsigns have been registered for <?php echo($current_title); ?>:
 
                         <!-- iterate through regions and get current participants -->
                         <?php
