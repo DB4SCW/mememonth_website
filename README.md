@@ -20,3 +20,17 @@ The following things are loaded dynamically from the database:
 This means once you like to change over to the next years event, just insert a new row to the mememonths table of the database. Then, the "who" tab will roll over to a new archive tab and present completely empty. 
 
 You can then add the callsigns for this new event and the page will fill up again.
+
+## API
+This website provides an API for other websites to use it as an authoratativ data source for registered special event callsigns. 
+You can reach it at: ```https://your.site.here/api.php```
+
+If you just call it like this, it will give you all callsigns ever as a JSON file. 
+You can add the following parameters, either as get parameters or as post parameters: 
+- year
+- region
+
+If you do provide both GET and POST values for the same parameter, POST values will override GET. But please stop doing that ;)
+
+For example, this will give you all callsigns in 2024 registered in IARU region 1 as JSON:
+```https://your.site.here/api.php?year=2024&region=1```
