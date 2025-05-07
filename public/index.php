@@ -175,7 +175,7 @@
                     <p>If you are a POTA hunter, keep your eyes peeled for some POTA activations, too.</p>
 
                     <h4>Which of the Megahertz can I find you on?</h4>
-                    <p>Likely operations will include all of HF (160m-10m), as well as 2m, 70cm and QO-100 satellite work (for those within the footprint).</p>
+                    <p>Likely operations will include all of HF (160m-6m), as well as 2m, 70cm and QO-100 satellite work (for those within the footprint).</p>
                 </article>
                 <article role="tabpanel" hidden id="tab-E">
                   <h3>Why the heck do you do this?</h3>
