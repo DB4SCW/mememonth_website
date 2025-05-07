@@ -21,7 +21,8 @@
           region INTEGER NOT NULL,
           callsign TEXT NOT NULL,
           mainop TEXT NOT NULL,
-          flag TEXT NOT NULL
+          flag TEXT NOT NULL,
+          UNIQUE(year, callsign)
       );";
       $db->exec($createTableSQL);
 
@@ -118,6 +119,7 @@
                     <h4>This info in foreign languages:</h4>
                     <section class="field-row">
                       <a href="https://www.db4scw.de/meme-appreciation-month/"><button>Deutsch/German</button></a>
+                      <a href="https://mememonth.fenneck.eu/"><button>Polski/Polish</button></a>
                     </section>
                 </article>
                 <article role="tabpanel" hidden id="tab-B">
