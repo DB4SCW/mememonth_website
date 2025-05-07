@@ -37,7 +37,7 @@ For example, this will give you all callsigns in 2024 registered in IARU region 
 ```https://your.site.here/api.php?year=2024&region=1```
 
 ### Event API
-Another API is the event api, where you can get infos about past Meme Appreciation Month. Call it like this:
+Another API is the event api, where you can get infos about past Meme Appreciation Month events. Call it like this:
 ```https://your.site.here/eventapi.php```
 
 This API has no parameters or filters.
