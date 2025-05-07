@@ -20,6 +20,11 @@ try {
     // fetch results
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    //change integer for bool
+    foreach ($results as &$entry) {
+        $entry['award'] = $entry['award'] == 1 ? true : false;
+    }
+
     // return JSON
     http_response_code(200);
     echo json_encode($results);
