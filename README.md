@@ -2,7 +2,7 @@
 This is the website for Meme Appreciation Month, a website for a amateur radio special event centered around meme culture.
 
 ## Frontend
-This page is almost 100% HTML and PHP. The only client side Javascript is used for tab switching.
+This page is almost 100% HTML and vanilla PHP. No framework, just pure, fast, distilled web languages. The only client side Javascript is used for tab switching.
 
 ## Backend
 This website uses a sqlite database as its data source. If the database file does not exist, the first page load will create it. It is then your responsibility to fill the database with events and callsigns.
