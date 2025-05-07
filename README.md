@@ -14,8 +14,8 @@ The following things are loaded dynamically from the database:
 - The current event title under the descriptions
 - Award button link
 - Registered callsigns in the "who" tab
-- Dates of the even in the "when" tab
-- All archive tabs, including title, list of callsign and award program button (or lack thereof)
+- Dates of the event in the "when" tab
+- All archive tabs, including event title, list of callsigns and award program button (or lack thereof)
 
 This means once you like to change over to the next years event, just insert a new row to the mememonths table of the database. Then, the "who" tab will roll over to a new archive tab and present completely empty. 
 
