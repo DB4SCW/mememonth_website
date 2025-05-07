@@ -132,7 +132,7 @@
                         <?php
                         for ($i = 1; $i <= 3; $i++) {
                         ?>
-                        <p>IARU Region 1:
+                        <p>IARU Region <?php echo($i); ?>:
                         <ul>
                           <?php
                             $query1 = "SELECT * FROM callsigns WHERE year = " . $current_year . " AND region = " . $i . " AND hide = 0 ORDER BY sort ASC, id ASC";
