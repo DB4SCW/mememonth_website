@@ -22,6 +22,7 @@ This means once you like to change over to the next years event, just insert a n
 You can then add the callsigns for this new event and the page will fill up again.
 
 ## API
+### Callsign API
 This website provides an API for other websites to use it as an authoritative data source for registered special event callsigns. 
 You can reach it at: ```https://your.site.here/api.php```
 
@@ -34,6 +35,12 @@ If you do provide both GET and POST values for the same parameter, POST values w
 
 For example, this will give you all callsigns in 2024 registered in IARU region 1 as JSON:
 ```https://your.site.here/api.php?year=2024&region=1```
+
+### Event API
+Another API is the event api, where you can get infos about past Meme Appreciation Month. Call it like this:
+```https://your.site.here/eventapi.php```
+
+This API has no parameters or filters.
 
 ## URLs
 There is a urls.example.json file in the database directory. This contains urls to your hamawardz instance, as well as links to impressum and data protection declaration, if you need those. 
