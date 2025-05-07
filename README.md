@@ -38,4 +38,6 @@ For example, this will give you all callsigns in 2024 registered in IARU region 
 ## URLs
 There is a urls.example.json file in the database directory. This contains urls to your hamawardz instance, as well as links to impressum and data protection declaration, if you need those. 
 
+Copy this file as urls.json and edit the urls to your liking.
+
 While hamawardz url is absolutely necessary (unless you have no awards), impressum and data protection urls can be removed. They will not show up on the site then.
