@@ -124,7 +124,7 @@
                     </section>
                 </article>
                 <article role="tabpanel" hidden id="tab-B">
-                    <h3>Who is in this? How much LIDs can there be?</h3>
+                    <h3>Who is in this? How many LIDs can there be?</h3>
                     <p>
                       The following callsigns have been registered for <?php echo($current_title); ?>:
 
