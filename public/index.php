@@ -141,6 +141,7 @@
                     <section class="field-row">
                       <a href="https://www.db4scw.de/meme-appreciation-month/"><button>Deutsch/German</button></a>
                       <a href="https://mememonth.fenneck.eu/"><button>Polski/Polish</button></a>
+                      <a href="https://mememonth.fenneck.eu/tl.html"><button>Tagalog/Tagalog</button></a>
                     </section>
                 </article>
                 <article role="tabpanel" hidden id="tab-B">
