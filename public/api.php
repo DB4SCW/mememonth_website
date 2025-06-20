@@ -42,7 +42,7 @@ try {
     }
 
     // build base query and parameters
-    $sql = "SELECT year, region, callsign, mainop, flag, sort FROM callsigns WHERE hide = 0";
+    $sql = "SELECT year, region, callsign, mainop, flag, sort, IFNULL(static_url, 'https://www.qrz.com/db/' || callsign) as url FROM callsigns WHERE hide = 0";
 
     // add filters dynamically
     if ($year !== null) {

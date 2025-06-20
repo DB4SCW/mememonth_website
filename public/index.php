@@ -42,6 +42,9 @@
           callsign TEXT NOT NULL,
           mainop TEXT NOT NULL,
           flag TEXT NOT NULL,
+          [sort]	INTEGER NOT NULL DEFAULT 1,
+          hide	INTEGER NOT NULL DEFAULT 0,
+          static_url	TEXT DEFAULT NULL,
           UNIQUE(year, callsign)
       );";
       $db->exec($createTableSQL);
@@ -156,7 +159,7 @@
                         <p>IARU Region <?php echo($i); ?>:
                         <ul>
                           <?php
-                            $query1 = "SELECT * FROM callsigns WHERE year = " . $current_year . " AND region = " . $i . " AND hide = 0 ORDER BY sort ASC, id ASC";
+                            $query1 = "SELECT *, IFNULL(static_url, 'https://www.qrz.com/db/' || callsign) as url FROM callsigns WHERE year = " . $current_year . " AND region = " . $i . " AND hide = 0 ORDER BY sort ASC, id ASC";
                             $stmt1 = $db->query($query1);
                             $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
@@ -165,7 +168,8 @@
                                     $flag = htmlspecialchars($row['flag']);
                                     $callsign = htmlspecialchars($row['callsign']);
                                     $mainop = htmlspecialchars($row['mainop']);
-                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                    $url = htmlspecialchars($row['url']);
+                                    echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"{$url}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
                                 }
                             } else {
                                 echo "<li>For this region, there are no participants announced yet. Check back later!</li>";
@@ -231,7 +235,7 @@
                       <p>IARU Region <?php echo($i);?>:
                         <ul>
                         <?php
-                          $query1 = "SELECT * FROM callsigns WHERE year = " . $monthrow['year'] . " AND region = " . $i .  " AND hide = 0 ORDER BY sort ASC, id ASC";
+                          $query1 = "SELECT *, IFNULL(static_url, 'https://www.qrz.com/db/' || callsign) as url FROM callsigns WHERE year = " . $monthrow['year'] . " AND region = " . $i .  " AND hide = 0 ORDER BY sort ASC, id ASC";
                           $stmt1 = $db->query($query1);
                           $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 
@@ -240,7 +244,8 @@
                                   $flag = htmlspecialchars($row['flag']);
                                   $callsign = htmlspecialchars($row['callsign']);
                                   $mainop = htmlspecialchars($row['mainop']);
-                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"https://qrz.com/db/{$callsign}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
+                                  $url = htmlspecialchars($row['url']);
+                                  echo "<li><span class=\"flag-icon flag-icon-{$flag} flag-icon-squared\"></span><a href=\"{$url}\" style=\"color: black; padding-left: 5px;\">{$callsign}</a> <!-- {$mainop} --></li>";
                               }
                           } else {
                               echo "<li>For this region, there were no participants.</li>";
