@@ -1,6 +1,8 @@
 # Website for Meme Appreciation Month
 This is the website for Meme Appreciation Month, a website for a amateur radio special event centered around meme culture.
 
+It also features an API for data enthusiasts, as well as being the data source for the translated webpage project [here](https://github.com/YamishoYami/MemeMonthPL).
+
 ## Frontend
 This page is almost 100% HTML and vanilla PHP. No framework, just pure, fast, distilled web languages. The only client side Javascript is used for tab switching.
 
