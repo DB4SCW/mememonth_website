@@ -47,14 +47,15 @@ try {
     // fetch results
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    // create hamalert style list
     $callsigns = implode(',', array_column($results, 'callsign'));
 
-    // return JSON
+    // return list as text
     http_response_code(200);
     echo($callsigns);
 
 } catch (PDOException $e) {
-    // return error JSON
+    // return error text
     http_response_code(418);
     echo("Database error: " . $e->getMessage());
     exit;
