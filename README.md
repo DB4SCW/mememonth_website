@@ -42,6 +42,10 @@ Another API is the event api, where you can get infos about past Meme Appreciati
 
 This API has no parameters or filters.
 
+### Hamalert Callsign List API
+This website provides an API to provide a hamalert-style list of all event callsigns in a year.
+```https://your.site.here/hamalertlistapi.php?year=2025```
+
 ## URLs
 There is a urls.example.json file in the database directory. This contains urls to your hamawardz instance, as well as links to impressum and data protection declaration, if you need those. 
 
