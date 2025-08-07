@@ -1,4 +1,21 @@
 <!DOCTYPE html>
+  <?php
+    // try to read links for url data from file
+    $urls_filename = "../database/urls.json";
+    $urldata = [];
+    
+    //check if file exists, only then load urldata
+    if(file_exists($urls_filename))
+    {
+      try {
+        $jsonString = file_get_contents($urls_filename);
+        // Decode JSON into an associative array
+        $urldata = json_decode($jsonString, true);
+      } catch (\Throwable $th) {
+        $urldata = [];
+      }
+    }
+  ?>
 <html lang="en">
   <head>
     <title>Meme Appreciation Month</title>
@@ -6,27 +23,17 @@
     <link rel="stylesheet" href="xp.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
+    <?php
+    if(array_key_exists('mastodon_verification', $urldata))
+    {
+      echo('<link rel="me" href="' . $urldata['mastodon_verification'] . '">');
+    }
+    ?>
   </head>
 
   <body>
+    
     <?php
-
-      // try to read links for url data from file
-      $urls_filename = "../database/urls.json";
-      $urldata = [];
-      
-      //check if file exists, only then load urldata
-      if(file_exists($urls_filename))
-      {
-        try {
-          $jsonString = file_get_contents($urls_filename);
-          // Decode JSON into an associative array
-          $urldata = json_decode($jsonString, true);
-        } catch (\Throwable $th) {
-          $urldata = [];
-        }
-      }
-
       //get hamawardz basebath
       $hamaward_basepath = array_key_exists('hamawardz_basepath', $urldata) ? $urldata['hamawardz_basepath'] : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ?ref=';
 
