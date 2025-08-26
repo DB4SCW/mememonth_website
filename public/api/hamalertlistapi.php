@@ -8,7 +8,7 @@ header("Access-Control-Allow-Origin: *");
 try {
     
     // connect to the database
-    $db = new PDO('sqlite:../database/mam.sqlite');
+    $db = new PDO('sqlite:../../database/mam.sqlite');
 
     // get Post or Get parameters
     $year = $_POST['year'] ?? $_GET['year'] ?? null;

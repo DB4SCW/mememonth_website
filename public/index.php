@@ -206,7 +206,7 @@
                     </p>
 
                     <p>The actual operators of these calls may and will rotate throughout the event in order to get the most out of our money (cries in event callsign fees).</p>
-                    <p>Would you like a list of all callsigns for your hamalert needs? Get it <a href="./hamalertlistapi.php?year=<?php echo($maxYear);?>">here.</a></p>
+                    <p>Would you like a list of all callsigns for your hamalert needs? Get it <a href="./api/hamalertlistapi.php?year=<?php echo($maxYear);?>">here.</a></p>
                     <hr>
                     <h3>How to join the madness?</h3>
                     <a rel="noopener" target="_blank" href="https://discord.gg/fyvjGkky7W"><img class="hover-shadow" src="images/join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>

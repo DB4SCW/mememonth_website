@@ -8,7 +8,7 @@ header("Access-Control-Allow-Origin: *");
 try {
     
     // try to read links for url data from file
-    $urls_filename = "../database/urls.json";
+    $urls_filename = "../../database/urls.json";
     $urldata = [];
     
     //check if file exists, only then load urldata

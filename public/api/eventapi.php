@@ -8,7 +8,7 @@ header("Access-Control-Allow-Origin: *");
 try {
     
     // connect to the database
-    $db = new PDO('sqlite:../database/mam.sqlite');
+    $db = new PDO('sqlite:../../database/mam.sqlite');
 
     // build base query and parameters
     $sql = "SELECT year, title, [from], [to], award, [description] FROM mememonths ORDER BY year ASC";
