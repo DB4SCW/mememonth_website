@@ -1,4 +1,22 @@
 <?php
+
+function getBaseUrl() {
+    //detect protocol
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+
+    //host (domain + port if non-standard)
+    $host = $_SERVER['HTTP_HOST'];
+
+    //include path if subdirectory
+    $scriptDir = rtrim(str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']), '/');
+
+    //return findings
+    return $scheme . "://" . $host . $scriptDir;
+}
+
+//get baseURL
+$baseurl = str_replace("api", "qsl_designs", rtrim(getBaseUrl(), '/'));
+
 //send header JSON
 header('Content-Type: application/json');
 
@@ -11,7 +29,7 @@ try {
     $db = new PDO('sqlite:../../database/mam.sqlite');
 
     // build base query and parameters
-    $sql = "SELECT sort, filename FROM qsl_designs ORDER BY sort ASC";
+    $sql = "SELECT sort, '" . $baseurl . "/' || filename as filename FROM qsl_designs ORDER BY sort ASC";
 
     // prepare, bind, and execute
     $stmt = $db->prepare($sql);
