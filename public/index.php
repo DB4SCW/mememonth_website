@@ -15,6 +15,13 @@
         $urldata = [];
       }
     }
+
+    //read button link - defaults to Rickroll
+    $buttonlink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    if(array_key_exists('buttonlink', $urldata))
+    {
+      $buttonlink = $urldata['buttonlink'];
+    }
   ?>
 <html lang="en">
   <head>
@@ -35,7 +42,7 @@
     
     <?php
       //get hamawardz basebath
-      $hamaward_basepath = array_key_exists('hamawardz_basepath', $urldata) ? $urldata['hamawardz_basepath'] : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ?ref=';
+      $hamaward_basepath = array_key_exists('hamawardz_basepath', $urldata) ? $urldata['hamawardz_basepath'] : ($buttonlink . '?ref=');
 
       //open database
       $db = new PDO('sqlite:../database/mam.sqlite');
@@ -117,9 +124,9 @@
         <div class="title-bar">
           <div class="title-bar-text">Information about <?php echo($current_title);?></div>
           <div class="title-bar-controls">
-            <a href="https://mememonth.org"><button aria-label="Minimize"></button></a>
+            <a href="<?php echo($buttonlink); ?>"><button aria-label="Minimize"></button></a>
             <a href="https://mememonth.org"><button aria-label="Maximize"></button></a>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button aria-label="Close"></button></a>
+            <a href="<?php echo($buttonlink); ?>"><button aria-label="Close"></button></a>
           </div>
         </div>
         <div class="window-body">
@@ -336,8 +343,8 @@
             </section>
 
             <section class="field-row" style="justify-content: flex-end">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button>OK</button></a>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button>Cancel</button></a>
+            <a href="<?php echo($buttonlink); ?>"><button>OK</button></a>
+            <a href="<?php echo($buttonlink); ?>"><button>Cancel</button></a>
             </section>
         </div>
 
