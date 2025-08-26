@@ -20,8 +20,8 @@
   <head>
     <title>Meme Appreciation Month</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="xp.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="plumbing/xp.css" />
+    <link rel="stylesheet" href="plumbing/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <?php
     if(array_key_exists('mastodon_verification', $urldata))
@@ -65,12 +65,23 @@
           [to]	TEXT NOT NULL,
           award	INTEGER NOT NULL DEFAULT 1,
           description	INTEGER NOT NULL,
+          active INTEGER NOT NULL DEFAULT 1,
+          PRIMARY KEY(id AUTOINCREMENT)
+      );";
+      $db->exec($createTableSQL);
+
+      $createTableSQL = "
+          CREATE TABLE IF NOT EXISTS qsl_designs (
+          id	INTEGER NOT NULL UNIQUE,
+          [sort]	INTEGER NOT NULL UNIQUE DEFAULT 1,
+          filename	TEXT NOT NULL,
+          active INTEGER NOT NULL DEFAULT 1,
           PRIMARY KEY(id AUTOINCREMENT)
       );";
       $db->exec($createTableSQL);
 
       //get current Meme Month Year
-      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM mememonths;");
+      $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM mememonths WHERE active = 1;");
       $result = $yearstmt->fetch(PDO::FETCH_ASSOC);
       $maxYear = $result['max_year'] ? $result['max_year'] : date("Y");
 
@@ -87,12 +98,16 @@
       $current_year = $result['year'];
 
       //get all descriptions for iteration
-      $stmt = $db->query("SELECT year, description from mememonths ORDER BY year ASC;");
+      $stmt = $db->query("SELECT year, description FROM mememonths WHERE active = 1 ORDER BY year ASC;");
       $descriptions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       //get all events for iteration
-      $stmt = $db->query("SELECT * from mememonths WHERE year != (SELECT MAX(year) AS max_year FROM mememonths) ORDER BY year DESC;");
+      $stmt = $db->query("SELECT * FROM mememonths WHERE year != (SELECT MAX(year) AS max_year FROM mememonths) AND active = 1 ORDER BY year DESC;");
       $months = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      //get all qsl-designs for iteration
+      $stmt = $db->query("SELECT * FROM qsl_designs WHERE active = 1 ORDER BY sort ASC;");
+      $qsl_designs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       //define starting letter for tabs
       $start_letter = "G";
@@ -194,7 +209,7 @@
                     <p>Would you like a list of all callsigns for your hamalert needs? Get it <a href="./hamalertlistapi.php?year=<?php echo($maxYear);?>">here.</a></p>
                     <hr>
                     <h3>How to join the madness?</h3>
-                    <a rel="noopener" target="_blank" href="https://discord.gg/fyvjGkky7W"><img class="hover-shadow" src="join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>
+                    <a rel="noopener" target="_blank" href="https://discord.gg/fyvjGkky7W"><img class="hover-shadow" src="images/join-our-discord.png" alt="Join our Discord server" style="max-width:200px;border-radius:5px;"></a>
                 </article>
                 <article role="tabpanel" hidden id="tab-C">
                     <h3>When does this happen?</h3>
@@ -220,11 +235,18 @@
                   <p>QSL policies vary from operator to operator. Please consult the QRZ pages of each callsign.</p>
                   <hr>
                   <h4>Examples of past QSL cards:</h4>
-                  <img style="width: auto; height: 200px;" src="DL0NGCAT_QSL_card.jpg">
-                  <img style="width: auto; height: 200px;" src="DF4CEPALM_QSL_card.jpg">
-                  <img style="width: auto; height: 200px;" src="DC0NORRIS_QSL_card.jpg">
-                  <hr>
-                  <img style="width: auto; height: 200px;" src="DL0LOL_QSL_card.jpg">
+                  <?php
+                    $j = 1;
+                    foreach ($qsl_designs as $qsl_design) {
+                  ?>
+                  <img style="width: auto; height: 200px;" src="qsl_designs/<?php echo($qsl_design['filename']);?>">
+                  <?php
+                    if($j % 3 == 0) {
+                      echo('<hr>');
+                    }
+                    $j++;
+                    }
+                  ?>
                 </article>
 
                 <!-- iterate over past events -->
@@ -335,7 +357,7 @@
         <div style="font-size: 12px;">The only cookies we use are the ones we feed our web developers.</div>
       </div>
   </body>
-<script src="script_db4scw.js"></script>
+<script src="plumbing/script_db4scw.js"></script>
 
 
 </html>
