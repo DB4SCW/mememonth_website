@@ -220,9 +220,11 @@
                   <p>QSL policies vary from operator to operator. Please consult the QRZ pages of each callsign.</p>
                   <hr>
                   <h4>Examples of past QSL cards:</h4>
-                  <img style="width: auto; height: 200px;" src="DL0LOL_QSL_card.jpg">
                   <img style="width: auto; height: 200px;" src="DL0NGCAT_QSL_card.jpg">
                   <img style="width: auto; height: 200px;" src="DF4CEPALM_QSL_card.jpg">
+                  <img style="width: auto; height: 200px;" src="DC0NORRIS_QSL_card.jpg">
+                  <hr>
+                  <img style="width: auto; height: 200px;" src="DL0LOL_QSL_card.jpg">
                 </article>
 
                 <!-- iterate over past events -->
