@@ -102,7 +102,7 @@
       $descriptions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       //get all events for iteration
-      $stmt = $db->query("SELECT * FROM mememonths WHERE year != (SELECT MAX(year) AS max_year FROM mememonths) AND active = 1 ORDER BY year DESC;");
+      $stmt = $db->query("SELECT * FROM mememonths WHERE year != (SELECT MAX(year) AS max_year FROM mememonths WHERE active = 1) AND active = 1 ORDER BY year DESC;");
       $months = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       //get all qsl-designs for iteration
