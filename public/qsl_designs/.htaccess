@@ -1,0 +1,16 @@
+Options -Indexes -MultiViews
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Allow existing JPG/PNG files
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule \.(?:jpe?g|png)$ - [NC,L]
+
+# Everything else -> redirect to the parent folder's index.php
+# Works for:
+#   /mememonth/public/qsl_designs/...  -> /mememonth/public/index.php
+#   /qsl_designs/...                   -> /index.php
+RewriteCond %{REQUEST_URI} ^(.*)/qsl_designs/
+RewriteRule .? %1/index.php [R=302,L]
+</IfModule>
