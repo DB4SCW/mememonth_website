@@ -11,7 +11,7 @@ try {
     $db = new PDO('sqlite:../../database/mam.sqlite');
 
     // build base query and parameters
-    $sql = "SELECT year, title, [from], [to], award, [description] FROM mememonths ORDER BY year ASC";
+    $sql = "SELECT year, title, [from], [to], award, [description] FROM mememonths WHERE active = 1 ORDER BY year ASC";
 
     // prepare, bind, and execute
     $stmt = $db->prepare($sql);
