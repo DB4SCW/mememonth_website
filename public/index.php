@@ -87,6 +87,27 @@
       );";
       $db->exec($createTableSQL);
 
+      $createTableSQL = "
+          CREATE TABLE IF NOT EXISTS opinfo (
+          id	INTEGER NOT NULL UNIQUE,
+          opcall TEXT NOT NULL UNIQUE,
+          name TEXT NOT NULL,
+          emoji TEXT,
+          PRIMARY KEY(id AUTOINCREMENT)
+      );";
+      $db->exec($createTableSQL);
+
+      $createTableSQL = "
+        CREATE TABLE translations (
+        id	INTEGER NOT NULL UNIQUE,
+        language_code	TEXT NOT NULL,
+        button_text	TEXT NOT NULL,
+        url	TEXT,
+        hide	INTEGER NOT NULL DEFAULT 0,
+        PRIMARY KEY(id AUTOINCREMENT)
+      );";
+      $db->exec($createTableSQL);
+
       //get current Meme Month Year
       $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM mememonths WHERE active = 1;");
       $result = $yearstmt->fetch(PDO::FETCH_ASSOC);
@@ -103,6 +124,10 @@
       $current_from = $result['from'];
       $current_to = $result['to'];
       $current_year = $result['year'];
+
+      //get all translations for iteration
+      $stmt = $db->query("SELECT * FROM translations WHERE hide = 0 ORDER BY language_code ASC;");
+      $translations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       //get all descriptions for iteration
       $stmt = $db->query("SELECT year, description FROM mememonths WHERE active = 1 ORDER BY year ASC;");
@@ -171,9 +196,15 @@
                     <hr>
                     <h4>This info in foreign languages:</h4>
                     <section class="field-row">
-                      <a href="https://www.db4scw.de/meme-appreciation-month/"><button>Deutsch/German</button></a>
-                      <a href="https://mememonth.fenneck.eu/"><button>Polski/Polish</button></a>
-                      <a href="https://mememonth.fenneck.eu/tl.html"><button>Tagalog/Tagalog</button></a>
+                      <?php foreach ($translations as $translation) {
+                        
+                        $button = '<a href="';
+                        $button += $translation['url'];
+                        $button += '"><button>';
+                        $button += $translation['button_text'];
+                        $button += '</button></a>';
+                        echo($button);
+                      } ?>
                     </section>
                 </article>
                 <article role="tabpanel" hidden id="tab-B">
