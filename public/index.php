@@ -98,7 +98,7 @@
       $db->exec($createTableSQL);
 
       $createTableSQL = "
-        CREATE TABLE translations (
+        CREATE TABLE IF NOT EXISTS translations (
         id	INTEGER NOT NULL UNIQUE,
         language_code	TEXT NOT NULL,
         button_text	TEXT NOT NULL,
@@ -106,7 +106,7 @@
         hide	INTEGER NOT NULL DEFAULT 0,
         PRIMARY KEY(id AUTOINCREMENT)
       );";
-      $db->exec($createTableSQL);
+      //$db->exec($createTableSQL);
 
       //get current Meme Month Year
       $yearstmt = $db->query("SELECT MAX(year) AS max_year FROM mememonths WHERE active = 1;");
