@@ -175,31 +175,38 @@
                 </menu>
                 <!-- the tab content -->
                 <article role="tabpanel" id="tab-A" style="size: A4">
-                    <h3>What in the world is this "Meme Appreciation Month"?</h3>
-                    <p>The archives say it started in Canada as the brainchild of Ben (VA4BEN), as a way to spread joy & cheer to all the good little hams on the RF spectrum.</p>
-                    <p>Honestly it's a way for young hams to have some fun, use a cool callsign and do a neat activity together.</p>
-                    <?php
-                    foreach ($descriptions as $description) {
-                      echo "<p>" . $description['description'] . "</p>";
-                    }
-                    ?>
-                    <p>The title for this years event is <?php echo($current_title);?></p>
-                    <h4>What is a meme and why does it have to be appreciated?</h4>
-                    <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
-                    <p>To make it short - a meme is something most young people know and find funny.</p>
-                    <p>If this funny bit makes it into amateur radio and attracts the young folk - perfect, right?</p>
-                    <h4>Meme Appreciation Award <?php echo($current_year);?></h4>
-                    <p>This time, for your QSOs with all the meme callsigns, you can earn yourself some fancy awards!</p>
-                    <p>You can check if you qualify and download your award on this nifty webpage:</p>
-                    <a href=<?php echo("\"" . $hamaward_basepath . $current_year . "\"");?>><button>Check your award here</button></a>
-                    <p></p>
-                    <hr>
-                    <h4>This info in foreign languages:</h4>
-                    <section class="field-row">
-                      <?php foreach ($translations as $translation) {
-                        echo('<a href="' . $translation['url'] . '"><button>' . $translation['button_text'] . '</button></a>');
-                      } ?>
-                    </section>
+                  <h3>What in the world is this "Meme Appreciation Month"?</h3>
+                  <p>The archives say it started in Canada as the brainchild of Ben (VA4BEN), as a way to spread joy & cheer to all the good little hams on the RF spectrum.</p>
+                  <p>Honestly it's a way for young hams to have some fun, use a cool callsign and do a neat activity together.</p>
+                  <?php
+                  foreach ($descriptions as $description) {
+                    echo "<p>" . $description['description'] . "</p>";
+                  }
+                  ?>
+                  <p>The title for this years event is <?php echo($current_title);?></p>
+                  <h4>What is a meme and why does it have to be appreciated?</h4>
+                  <p>Officially, according to a dictionary, a meme is "an image, video, piece of text, etc., typically humorous in nature, that is copied and spread rapidly by internet users, often with slight variations".</p>
+                  <p>To make it short - a meme is something most young people know and find funny.</p>
+                  <p>If this funny bit makes it into amateur radio and attracts the young folk - perfect, right?</p>
+                  <h4>Meme Appreciation Award <?php echo($current_year);?></h4>
+                  <p>This time, for your QSOs with all the meme callsigns, you can earn yourself some fancy awards!</p>
+                  <p>You can check if you qualify and download your award on this nifty webpage:</p>
+                  <a href=<?php echo("\"" . $hamaward_basepath . $current_year . "\"");?>><button>Check your award here</button></a>
+                  
+                  <!-- check if translations are available and render buttons for each one -->
+                  <?php
+                  if(count($translations) > 0) {
+                  ?>
+                  <p></p>
+                  <hr>
+                  <h4>This info in foreign languages:</h4>
+                  <section class="field-row">
+                    <?php foreach ($translations as $translation) {
+                      echo('<a href="' . $translation['url'] . '"><button>' . $translation['button_text'] . '</button></a>');
+                    } ?>
+                  </section>
+                  <?php } ?>
+                  <!-- Translations end -->
                 </article>
                 <article role="tabpanel" hidden id="tab-B">
                     <h3>Who is in this? How many LIDs can there be?</h3>
