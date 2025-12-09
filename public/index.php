@@ -197,13 +197,7 @@
                     <h4>This info in foreign languages:</h4>
                     <section class="field-row">
                       <?php foreach ($translations as $translation) {
-                        
-                        $button = '<a href="';
-                        $button += $translation['url'];
-                        $button += '"><button>';
-                        $button += $translation['button_text'];
-                        $button += '</button></a>';
-                        echo($button);
+                        echo('<a href="' . $translation['url'] . '"><button>' . $translation['button_text'] . '</button></a>');
                       } ?>
                     </section>
                 </article>
