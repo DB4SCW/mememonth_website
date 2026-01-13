@@ -15,6 +15,7 @@ The following things are loaded dynamically from the database:
 - Description of each event on the main page
 - The current event title under the descriptions
 - Award button link
+- List of translations on the main page
 - Registered callsigns in the "who" tab
 - Dates of the event in the "when" tab
 - All archive tabs, including event title, list of callsigns and award program button (or lack thereof)
